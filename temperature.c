@@ -12,11 +12,11 @@ void func(int sockfd)
 {
     int buff[MAX]; 
     int i, 
-    
+    int t = time(1);
+    srand(t);
     for(i=30;i<=300;i++)
     {
-        int k = 0;
-        k = rand()%100 + buff[i];
+        buff[i] = rand()%100;
     }
     write(sockfd, buff, sizeof(buff)); 
     read(sockfd, buff, sizeof(buff)); 
